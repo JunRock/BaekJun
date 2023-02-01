@@ -3,7 +3,7 @@ import java.util.*;
 public class Math_영수증 {
     public void run(){
         int mymoney;
-        int 제품price;
+        int 제품가격;
         int num;
         int count=0;
         int sum=0;
@@ -11,9 +11,9 @@ public class Math_영수증 {
         mymoney=sc.nextInt();
         num=sc.nextInt();
         for(int i=0;i<num;i++){
-            제품price=sc.nextInt();
+            제품가격=sc.nextInt();
             count=sc.nextInt();
-            sum+=제품price*count;
+            sum+=제품가격*count;
         }
         if(sum==mymoney)
             System.out.println("Yes");
