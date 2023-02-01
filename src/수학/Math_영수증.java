@@ -10,6 +10,7 @@ public class Math_영수증 {
         Scanner sc=new Scanner(System.in);
         mymoney=sc.nextInt();
         num=sc.nextInt();
+
         for(int i=0;i<num;i++){
             제품가격=sc.nextInt();
             count=sc.nextInt();
