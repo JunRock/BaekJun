@@ -16,20 +16,20 @@ public class Dp_구간합구하기_11660 {
             }
         }
 
+        for(int i=1;i<=n;i++){
+            for(int j=1;j<=n;j++){
+                dp[i][j]=dp[i-1][j]+dp[i][j-1]-dp[i-1][j-1]+arr[i][j];
+            }
+        }
         int []sum=new int[m];
-
         for(int i=0;i<m;i++){
             int x1=sc.nextInt();
             int y1=sc.nextInt();
             int x2=sc.nextInt();
             int y2=sc.nextInt();
-            for(int h=x1;h<=x2;h++){
-                for(int w=y1;w<=y2;w++){
-                    sum[i]+=arr[h][w];
-                }
-            }
-        }
 
+            sum[i]=dp[x2][y2]-dp[x1-1][y2]-dp[x2][y1-1]+dp[x1-1][y1-1];
+        }
         for(int i=0;i<m;i++){
             System.out.println(sum[i]);
         }
