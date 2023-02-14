@@ -5,14 +5,16 @@ public class DFS_빵집_3109 {
     String [][]arr;
     boolean [][]visited;
     int []dx={-1,0,1};
-    int count=0;
+    int []dy={1,1,1};
+    int count;
+    boolean check;
     public void run(){
         Scanner sc=new Scanner(System.in);
         r=sc.nextInt();
         c=sc.nextInt();
         arr=new String[r][c];
         visited=new boolean[r][c];
-
+        count=0;
         for (int i = 0; i < r; i++) {
             String[] s = sc.next().split("");
             for (int j = 0; j < c; j++) {
@@ -21,30 +23,31 @@ public class DFS_빵집_3109 {
         }
 
         for(int i=0;i<r;i++){
+            check=false;
              dfs(i,0);
          }
         System.out.println(count);
     }
 
-    public void dfs(int index1,int index2){
-        if(index2==c-1){
+    public void dfs(int index1,int index2) {
+        if (index2 == c - 1) {
             count++;
+            check = true;
             return;
-            }
+        }
 
-        for(int i=0;i<3;i++){
-            int tmp1=index1+dx[i];
-            int tmp2=index2+1;
-            if (tmp1 < 0 || tmp1 >=r || tmp2 < 0 || tmp2 >= c)
-                    continue;
-                if(!visited[tmp1][tmp2]&&arr[tmp1][tmp2]!="x"){
-                    visited[tmp1][tmp2]=true;
-                    dfs(tmp1,tmp2);
+        for (int i = 0; i < 3; i++) {
+            int tmp1 = index1 + dx[i];
+            int tmp2 = index2 + dy[i];
+            if (tmp1 >=0 && tmp1 < r && tmp2 >= 0 && tmp2 < c) {
+                if (arr[tmp1][tmp2] == ".") {
+                    if (check) return;
+                    arr[tmp1][tmp2] = "o";
+                    dfs(tmp1, tmp2);
                 }
-
-
             }
         }
+    }
 
 
     public static void main(String[] args){
