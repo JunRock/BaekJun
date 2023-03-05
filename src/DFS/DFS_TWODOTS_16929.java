@@ -26,7 +26,7 @@ public class DFS_TWODOTS_16929 {
             for(int j=0;j<y;j++){
                 if(!visited[i][j]){
                     visited[i][j]=true;
-                    dfs(i,j,arr[i][j],0);
+                    dfs(i,j,arr[i][j],-1);
                 }
 
                 if(count!=0){
