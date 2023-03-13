@@ -8,18 +8,25 @@ public class Math_홀수_2576 {
         int k=0;
         int sum=0;
         int []tmp=new int[7];
+
         for(int i=0;i<7;i++){
             x=sc.nextInt();
             tmp[i]=x;
             if(x%2!=0)
                ++k;
         }
-
+        if(k==0){
+            System.out.println(-1);
+            return;
+        }
         int []arr=new int[k];
         k=0;
         for(int i=0;i<7;i++){
-            if(tmp[i]%2!=0)
-                arr[k++]=tmp[i];
+            if(tmp[i]%2!=0){
+                arr[k]=tmp[i];
+                k++;
+            }
+
         }
 
         int min1=arr[0];
