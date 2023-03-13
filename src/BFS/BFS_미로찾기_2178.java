@@ -14,7 +14,7 @@ public class BFS_미로찾기_2178 {
         visited=new boolean[x][y];
 
         for(int i=0;i<x;i++){
-            String str=sc.nextLine();
+            String str=sc.next();
             for(int j=0;j<y;j++){
                 map[i][j]=Integer.parseInt(String.valueOf(str.charAt(j)));
             }
@@ -37,7 +37,7 @@ public class BFS_미로찾기_2178 {
                 if(tmp1>=0&&tmp2>=0&&tmp1<x&&tmp2<y){
                     if(map[tmp1][tmp2]!=0&&!visited[tmp1][tmp2]){
                         visited[tmp1][tmp2]=true;
-                        map[x][y]=map[arr[0]][arr[1]]+1;
+                        map[tmp1][tmp2]=map[arr[0]][arr[1]]+1;
                         queue.add(new int[]{tmp1,tmp2});
                     }
                 }
