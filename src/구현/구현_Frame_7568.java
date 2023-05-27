@@ -14,18 +14,16 @@ public class 구현_Frame_7568 {
         }
 
         for(int i=0;i<num;i++){
-            count=1;
+            count=0;
             for(int j=0;j<num;j++){
-                if(weight[i]>weight[j]&&height[i]>height[j])
+                if(weight[i]<weight[j]&&height[i]<height[j])
                     count++;
             }
-            rank[i]=count;
+            rank[i]=count+1;
         }
-        int[] ranking =new int[num];
-        int max=0;
-        for(int i=0;i<num;i++){
-            if(max<rank[i])
-        }
+
+        for(int i=0;i<num;i++)
+            System.out.print(rank[i]+" ");
     }
 
     public static void main(String[] args) {
