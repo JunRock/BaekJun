@@ -19,22 +19,24 @@ public class 구현_Flavius_1158 {
         while(count!=num){
             result[count]=arr[index];
             arr[index]=0;
-            in_count=0;
-            index++;
             count++;
+            if(count==num)
+                break;
+            in_count=0;
             while(in_count<m){
+                index++;
+                if(index>num)
+                    index-=num;
                 if(arr[index]!=0){
-                    index++;
                     in_count++;
-                    if(index>num)
-                        index-=num;
                 }
-                else
-                    index++;
             }
         }
-
-        for(int i=0;i< result.length;i++)
-            System.out.print(result[i]+" ");
+        int i;
+        System.out.print("<");
+        for(i=0;i<count-1;i++)
+            System.out.print(result[i]+", ");
+        System.out.print(result[count-1]);
+        System.out.print(">");
     }
 }
