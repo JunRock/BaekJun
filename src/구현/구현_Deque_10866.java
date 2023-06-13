@@ -6,8 +6,8 @@ public class 구현_Deque_10866 {
         int num=sc.nextInt();
         int x;
         Deque<Integer> deque=new LinkedList<>();
-
-        for(int i=0;i<num;i++){
+        int count=0;
+        while(count!=num){
             String order=sc.next();
             if(order.equals("push_back")){
                 x=sc.nextInt();
@@ -15,20 +15,43 @@ public class 구현_Deque_10866 {
             }
             else if(order.equals("push_front")){
                 x=sc.nextInt();
-                deque.addLast(x);
+                deque.addFirst(x);
             }
             else if(order.equals("front")){
-                System.out.println(deque.peekFirst());
+                if(deque.isEmpty())
+                    System.out.println(-1);
+                else
+                    System.out.println(deque.peekFirst());
             }
             else if(order.equals("back")){
-                System.out.println(deque.peekLast());
+                if(deque.isEmpty())
+                    System.out.println(-1);
+                else
+                    System.out.println(deque.peekLast());
             }
             else if(order.equals("size")){
                 System.out.println(deque.size());
             }
             else if(order.equals("empty")){
-                System.out.println(deque.peekFirst());
+                if(!deque.isEmpty())
+                    System.out.println(0);
+                else
+                    System.out.println(1);
             }
+            else if(order.equals("pop_front")){
+                if(deque.isEmpty())
+                    System.out.println(-1);
+                else
+                    System.out.println(deque.removeFirst());
+            }
+            else if(order.equals("pop_back")){
+                if(deque.isEmpty())
+                    System.out.println(-1);
+                else
+                    System.out.println(deque.removeLast());
+            }
+            count++;
         }
+
     }
 }
