@@ -6,7 +6,7 @@ public class STRING_Alpabet_2941 {
         String[]str={"c=","c-","dz=","d-","lj","nj","s=","z="};
         String s=sc.next();
 
-        for(int i=0;i<s.length();i++){
+        for(int i=0;i<str.length;i++){
             if(s.contains(str[i])){
                 s=s.replace(str[i],"0");
             }
