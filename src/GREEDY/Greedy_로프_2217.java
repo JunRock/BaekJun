@@ -20,4 +20,5 @@ public class Greedy_로프_2217 {
         }
         System.out.println(maxWeight);
     }
+
 }
