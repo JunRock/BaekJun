@@ -19,6 +19,7 @@ public class 구현_Snail_1913 {
         int right = size;
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
+        System.out.println();
         while (num > 0) {
             for (int i = bottom; i <= top; i++) { //아래로 내려가는 경우
                 map[i][left] = num--;
