@@ -11,6 +11,7 @@ public class BruteForce_2003 {
        /* BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String str= br.readLine();
         StringTokenizer st=new StringTokenizer(str);*/
+
         Scanner sc = new Scanner(System.in);
         int N = sc.nextInt();
         int M = sc.nextInt();
