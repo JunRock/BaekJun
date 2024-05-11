@@ -13,4 +13,5 @@ public class STRING_Alpabet_2941 {
         }
         System.out.println(s.length());
     }
+
 }
