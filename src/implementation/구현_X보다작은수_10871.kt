@@ -1,4 +1,4 @@
-package 구현
+package implementation
 
 fun main(){
     val (x,y) = readln().split(" ").map { (it.toInt()) }

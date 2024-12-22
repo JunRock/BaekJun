@@ -1,4 +1,4 @@
-package 구현;
+package implementation;
 import java.util.*;
 public class 구현_Deque_10866 {
     public static void main(String[] args) {

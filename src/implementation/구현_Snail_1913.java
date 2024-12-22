@@ -1,10 +1,9 @@
-package 구현;
+package implementation;
 
 import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.util.Scanner;
-import java.util.stream.IntStream;
 
 public class 구현_Snail_1913 {
     public static void main(String[] args) throws IOException {

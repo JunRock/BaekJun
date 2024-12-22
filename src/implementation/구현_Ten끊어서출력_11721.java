@@ -1,4 +1,4 @@
-package 구현;
+package implementation;
 import java.util.*;
 public class 구현_Ten끊어서출력_11721 {
     public void run(){

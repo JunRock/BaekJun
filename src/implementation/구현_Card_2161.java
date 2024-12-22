@@ -1,4 +1,4 @@
-package 구현;
+package implementation;
 import java.util.*;
 public class 구현_Card_2161 {
     public static void main(String[] args) {

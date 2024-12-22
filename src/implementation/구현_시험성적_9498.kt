@@ -1,4 +1,4 @@
-package 구현
+package implementation
 
 fun main() {
     var num = readLine()!!.toInt();

@@ -1,4 +1,4 @@
-package 구현;
+package implementation;
 import java.util.*;
 public class 구현_윳Play_2490 {
     public void run(){
