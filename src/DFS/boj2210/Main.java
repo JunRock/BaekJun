@@ -26,7 +26,6 @@ public class Main {
 
         for (int i = 0; i < NUMBER_PLATE_SIZE; i++) {
             for (int j = 0; j < NUMBER_PLATE_SIZE; j++) {
-                number = new StringBuilder();
                 dfs(i, j, 0,"");
             }
         }
