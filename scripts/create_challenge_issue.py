@@ -3,6 +3,7 @@ import json
 import datetime
 import sys
 import os
+import re
 
 if len(sys.argv) == 1:
     print("no system arguments")
