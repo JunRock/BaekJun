@@ -2,10 +2,6 @@ import os
 import requests
 import json
 
-GH_API_BASED_HEADERS = {
-    "Accept": "application/vnd.github+json"
-}
-
 SOLVED_AC_API_URL = "https://solved.ac/api/v3/problem/show"
 
 def get_problem_info(problem_id):
@@ -70,12 +66,16 @@ def main():
 
     problem_info = get_problem_info(problem_id)
 
-    with open("problems.json", "r", encoding="utf-8") as f:
-        problems = json.load(f)
+    problems_file = "problems.json"
+    if os.path.exists(problems_file):
+        with open(problems_file, "r", encoding="utf-8") as f:
+            problems = json.load(f)
+    else:
+        problems = []
 
     problems.append(problem_info)
 
-    with open("problems.json", "w", encoding="utf-8") as f:
+    with open(problems_file, "w", encoding="utf-8") as f:
         json.dump(problems, f, indent=4)
 
     generate_readme("src", problems)
