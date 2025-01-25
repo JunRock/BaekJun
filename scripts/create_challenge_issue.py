@@ -114,18 +114,19 @@ def main():
 
     print(f"Latest commit message: {latest_commit_message}")
 
-    if not latest_commit_message.startswith("feat : solve"):
-        print("This commit is not a 'feat: solve [problem_number]' commit")
+    match = re.match(r"^feat : solve (\d+)$", latest_commit_message)
+    if not match:
+        print("Invalid commit message format. Expected 'feat : solve [problem_number]'.")
         return
+
+    solved_problem_number = match.group(1)
+    print(f"Solved problem number: {solved_problem_number}")
 
     try:
-        solved_problem_number = latest_commit_message.split()[2]
-    except IndexError:
-        print("No problem number found in commit message")
-        return
-
-    problem_info = get_problem_info(solved_problem_number)
-    add_problem_metadata_to_java(file_path, problem_info)
+        problem_info = get_problem_info(solved_problem_number)
+        add_problem_metadata_to_java(file_path, problem_info)
+    except Exception as e:
+        print(f"Error: {e}")
 
 
 if __name__ == "__main__":
