@@ -100,14 +100,21 @@ def main():
     latest_commit_message = latest_commit_info["commit_message"]
     file_path = latest_commit_info["file_path"]
 
-    if not latest_commit_message.startswith("solve"):
-        print("This commit is not a 'solve' commit")
+    print(f"Latest commit message: {latest_commit_message}")
+
+    if not latest_commit_message.startswith("feat : solve"):
+        print("This commit is not a 'feat: solve [problem_number]' commit")
         return
 
-    solved_problem_number = latest_commit_message.split()[1]
+    try:
+        solved_problem_number = latest_commit_message.split()[2]
+    except IndexError:
+        print("No problem number found in commit message")
+        return
 
     problem_info = get_problem_info(solved_problem_number)
     add_problem_metadata_to_java(file_path, problem_info)
+
 
 if __name__ == "__main__":
     main()
