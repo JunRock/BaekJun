@@ -14,33 +14,15 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.10"
-          cache: pip
-      - name: Install Python Dependencies
-        run: pip install requests
-      - name: Extract Problem Info
-        id: extract-problem-info
+          cache: 'pip'
+      - run: pip install requests
+      - name: Update Problems and README
+        env:
+          COMMIT_MESSAGE: ${{ github.event.head_commit.message }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: python3 ./scripts/manage_problems.py
+      - name: Commit and Push Changes
         run: |
-          python3 ./scripts/create_challenge_issue.py ${{ secrets.GH_TOKEN }} JunRock BaekJun > output.json
-        shell: bash
-      - name: Parse Python Output
-        id: parse-output
-        run: |
-          echo "Reading Python output..."
-          problem_id=$(jq -r '.problem_id' output.json)
-          problem_title=$(jq -r '.problem_name' output.json)
-          problem_level=$(jq -r '.problem_level' output.json)
-          problem_tags=$(jq -r '.problem_tags' output.json)
-          problem_directory=$(jq -r '.problem_directory' output.json)
-
-          echo "problem_id=${problem_id}" >> $GITHUB_ENV
-          echo "problem_title=${problem_title}" >> $GITHUB_ENV
-          echo "problem_level=${problem_level}" >> $GITHUB_ENV
-          echo "problem_tags=${problem_tags}" >> $GITHUB_ENV
-          echo "problem_directory=${problem_directory}" >> $GITHUB_ENV
-        shell: bash
-      - name: Update README with Problem Info
-        run: |
-          echo "| ${problem_id} | ${problem_title} | ${problem_level} | ${problem_tags} | [Problem Link](https://www.acmicpc.net/problem/${problem_id}) | [Code](src/${problem_directory}/boj${problem_id}/Main.java) |" >> README.md
-          git add README.md
-          git commit -m "Update README with problem ${problem_id}"
+          git add README.md problems.json
+          git commit -m "Update README with problem information"
           git push
