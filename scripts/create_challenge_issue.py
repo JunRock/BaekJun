@@ -60,17 +60,27 @@ def get_problem_info(problem_id):
 
     parameters = {"problemId": problem_id}
 
-    response = requests.get(
-        SOLVED_AD_API_URL,
-        params=parameters
-    ).json()
+    try:
+        response = requests.get(SOLVED_AD_API_URL, params=parameters)
+        
+        if response.status_code != 200:
+            raise Exception(f"API call failed: {response.status_code} {response.text}")
 
-    return {
-        "problem_id": response["problemId"],
-        "problem_name": response["titleKo"],
-        "problem_level": levels[response["level"]],
-        "problem_tags": [tag["key"] for tag in response["tags"]],
-    }
+        data = response.json()
+
+        return {
+            "problem_id": data["problemId"],
+            "problem_name": data["titleKo"],
+            "problem_level": levels[data["level"]],
+            "problem_tags": [tag["key"] for tag in data["tags"]],
+        }
+
+    except json.JSONDecodeError:
+        print(f"Failed to decode JSON response for problem ID {problem_id}. Response text: {response.text}")
+        raise
+    except Exception as e:
+        print(f"Error fetching problem info: {e}")
+        raise
 
 def add_problem_metadata_to_java(file_path, problem_info):
     metadata = f"""/*
