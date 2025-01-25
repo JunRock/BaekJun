@@ -61,19 +61,17 @@ def get_problem_info(problem_id):
     parameters = {"problemId": problem_id}
 
     try:
-        response = requests.get(SOLVED_AD_API_URL, params=parameters)
+        response = requests.get(
+            SOLVED_AD_API_URL,
+            params=parameters
+        ).json()
         
-        if response.status_code != 200:
-            raise Exception(f"API call failed: {response.status_code} {response.text}")
-
-        data = response.json()
-
         return {
-            "problem_id": data["problemId"],
-            "problem_name": data["titleKo"],
-            "problem_level": levels[data["level"]],
-            "problem_tags": [tag["key"] for tag in data["tags"]],
-        }
+        "problem_id": response["problemId"],
+        "problem_name": response["titleKo"],
+        "problem_level": levels[response["level"]],
+        "problem_tag": response["tags"][0]["key"],
+    }
 
     except json.JSONDecodeError:
         print(f"Failed to decode JSON response for problem ID {problem_id}. Response text: {response.text}")
