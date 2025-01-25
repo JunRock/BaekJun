@@ -31,11 +31,23 @@ def read_latest_solved_commit_info():
         params=parameters
     ).json()
 
+    latest_commit_sha = response[0]["sha"]
+
+    commit_details_endpoint = GH_API_BASED_URL + "/repos/{}/{}/commits/{}".format(OWNER, OWN_REPOSITORY_NAME, latest_commit_sha)
+    commit_details = requests.get(
+        commit_details_endpoint,
+        headers=GH_API_BASED_HEADERS
+    ).json()
+
+    if "files" not in commit_details or len(commit_details["files"]) == 0:
+        raise Exception("No files found in the latest commit.")
+
     return {
-        "commit_message": response[0]["commit"]["message"],
-        "commit_url": response[0]["html_url"],
-        "file_path": response[0]["files"][0]["filename"]
+        "commit_message": commit_details["commit"]["message"],
+        "commit_url": commit_details["html_url"],
+        "file_path": commit_details["files"][0]["filename"]
     }
+
 
 def get_problem_info(problem_id):
     levels = {
