@@ -2,7 +2,7 @@ import requests
 import json
 import datetime
 import sys
-
+import os
 
 if len(sys.argv) == 1:
     print("no system arguments")
@@ -21,7 +21,6 @@ GH_API_BASED_HEADERS = {
 
 SOLVED_AD_API_URL = "https://solved.ac/api/v3/problem/show"
 
-
 def read_latest_solved_commit_info():
     read_commit_endpoint = GH_API_BASED_URL + "/repos/{}/{}/commits".format(OWNER, OWN_REPOSITORY_NAME)
 
@@ -32,9 +31,21 @@ def read_latest_solved_commit_info():
         params=parameters
     ).json()
 
+    latest_commit_sha = response[0]["sha"]
+
+    commit_details_endpoint = GH_API_BASED_URL + "/repos/{}/{}/commits/{}".format(OWNER, OWN_REPOSITORY_NAME, latest_commit_sha)
+    commit_details = requests.get(
+        commit_details_endpoint,
+        headers=GH_API_BASED_HEADERS
+    ).json()
+
+    if "files" not in commit_details or len(commit_details["files"]) == 0:
+        raise Exception("No files found in the latest commit.")
+
     return {
-        "commit_message": response[0]["commit"]["message"],
-        "commit_url": response[0]["html_url"]
+        "commit_message": commit_details["commit"]["message"],
+        "commit_url": commit_details["html_url"],
+        "file_path": commit_details["files"][0]["filename"]
     }
 
 
@@ -58,80 +69,45 @@ def get_problem_info(problem_id):
         "problem_id": response["problemId"],
         "problem_name": response["titleKo"],
         "problem_level": levels[response["level"]],
-        "problem_tag": response["tags"][0]["key"],
+        "problem_tags": [tag["key"] for tag in response["tags"]],
     }
 
+def add_problem_metadata_to_java(file_path, problem_info):
+    metadata = f"""/*
+ * Baekjoon Problem #{problem_info['problem_id']}: {problem_info['problem_name']}
+ * Link: https://www.acmicpc.net/problem/{problem_info['problem_id']}
+ * Level: {problem_info['problem_level']}
+ * Tags: {', '.join(problem_info['problem_tags'])}
+ */
+"""
+    try:
+        with open(file_path, "r+", encoding="utf-8") as file:
+            content = file.read()
+            if metadata in content:
+                print(f"Metadata already exists in {file_path}")
+                return
 
-def create_issue_template(problem_info, solution_code):
-    date = datetime.datetime.now().date()
-    formatted_date = date.strftime("%Y.%m.%d")
-
-    issue_title_format = "[solve] {} - @{}"
-    issue_title = issue_title_format.format(formatted_date, OWNER)
-
-    issue_body_format = (
-        "## {}  \n"
-        "- **author** : @{}  \n"
-        "- **platform** : baekjoon online judge  \n"
-        "- **problem info**  \n"
-        "  - **number** : {}  \n"
-        "  - **link** : [https://www.acmicpc.net/problem/{}](https://www.acmicpc.net/problem/{})  \n"
-        "  - **name** : {}  \n"
-        "  - **rank** : `{}`  \n"
-        "  - **category** : `{}`  \n"
-        "- [**browse code**]({})  \n"
-    )
-    issue_body = issue_body_format.format(
-        formatted_date,
-        OWNER,
-        problem_info["problem_id"],
-        problem_info["problem_id"], problem_info["problem_id"],
-        problem_info["problem_name"],
-        problem_info["problem_level"],
-        problem_info["problem_tag"],
-        solution_code
-    )
-
-    return {
-        "title": issue_title,
-        "body": issue_body
-    }
-
-
-def create_new_issue(issue_template):
-    create_issue_endpoint = "https://api.github.com/repos/unsolved-ac/challenge/issues"
-
-    body = {
-        "title": issue_template["title"],
-        "body": issue_template["body"],
-        "labels": ["solved"]
-    }
-
-    response = requests.post(
-        create_issue_endpoint,
-        headers=GH_API_BASED_HEADERS,
-        data=json.dumps(body)
-    ).json()
-
-    return response["html_url"]
-
+            file.seek(0, 0)
+            file.write(metadata + "\n" + content)
+            print(f"Metadata added to {file_path}")
+    except FileNotFoundError:
+        print(f"File {file_path} not found.")
+    except Exception as e:
+        print(f"Error updating file {file_path}: {e}")
 
 def main():
     latest_commit_info = read_latest_solved_commit_info()
     latest_commit_message = latest_commit_info["commit_message"]
-    solution_code = latest_commit_info["commit_url"]
+    file_path = latest_commit_info["file_path"]
 
     if not latest_commit_message.startswith("solve"):
-        print("this commit is not solved commit")
+        print("This commit is not a 'solve' commit")
         return
 
-    solved_problem_number = latest_commit_message.split()[2]
+    solved_problem_number = latest_commit_message.split()[1]
 
     problem_info = get_problem_info(solved_problem_number)
+    add_problem_metadata_to_java(file_path, problem_info)
 
-    issue_template = create_issue_template(problem_info, solution_code)
-    issue_url = create_new_issue(issue_template)
-    print(issue_url)
-
-
-main()
+if __name__ == "__main__":
+    main()
