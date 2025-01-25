@@ -20,7 +20,7 @@ public class Main {
         int n = Integer.parseInt(read());
         HashMap<Long, Integer> map = new HashMap<>();
         for (int i = 0; i < n; i++) {
-            long input = Long.parseLong(read()); // Long.parseLong 사용
+            long input = Long.parseLong(read());
             map.put(input, map.getOrDefault(input, 0) + 1);
         }
 
