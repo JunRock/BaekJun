@@ -20,5 +20,15 @@
         ],
         "problem_link": "https://www.acmicpc.net/problem/2108",
         "file_path": "src/implementation/boj2108/Main.java"
+    },
+    {
+        "problem_id": 1475,
+        "problem_name": "\ubc29 \ubc88\ud638",
+        "problem_level": "Silver 5",
+        "problem_tags": [
+            "implementation"
+        ],
+        "problem_link": "https://www.acmicpc.net/problem/1475",
+        "file_path": "src/implementation/boj1475/Main.java"
     }
 ]
