@@ -22,11 +22,13 @@ jobs:
         env:
           COMMIT_MESSAGE: ${{ github.event.head_commit.message }}
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          OWNER: "JunRock"
+          REPO: "BaekJun"
         run: python3 ./scripts/manage_problems.py
       - name: Commit and Push Changes
         run: |
           git config --global user.name "JunRock"
           git config --global user.email "wnstjr120422@naver.com"
           git add README.md problems.json
-          git commit -m "Update README with problem information"
+          git diff-index --quiet HEAD || git commit -m "Update README with problem information"
           git push
