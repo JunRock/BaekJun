@@ -81,7 +81,7 @@ public class Main {
 
     private static void write(Node result) {
         try {
-                bw.write(result.x + " "+result.y);
+            bw.write(result.x + " " + result.y);
             bw.flush();
         } catch (IOException e) {
             throw new RuntimeException(e);
