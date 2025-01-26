@@ -8,7 +8,7 @@ public class Main {
 
     public static void main(String[] args) {
         String[] number = read().split("");
-        int count =0;
+        int count = 0;
         int[] arr = new int[10];
 
         for (String s : number) {
@@ -18,8 +18,8 @@ public class Main {
             arr[Integer.parseInt(s)]++;
         }
         arr[6] = (arr[6] + 1) / 2;
-        for(int i=0;i<10;i++){
-            count = Math.max(count,arr[i]);
+        for (int i = 0; i < 10; i++) {
+            count = Math.max(count, arr[i]);
         }
         System.out.println(count);
     }
