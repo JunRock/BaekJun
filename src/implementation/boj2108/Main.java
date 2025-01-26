@@ -46,8 +46,8 @@ public class Main {
     }
 
     public static int calculateModeValue(List<Integer> list) {
-        Map<Integer,Long> map = list.stream()
-            .collect(Collectors.groupingBy(i -> i,(Collectors.counting())));
+        Map<Integer, Long> map = list.stream()
+            .collect(Collectors.groupingBy(i -> i, (Collectors.counting())));
 
         Long count = Collections.max(map.values());
 
