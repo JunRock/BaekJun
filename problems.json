@@ -30,5 +30,16 @@
         ],
         "problem_link": "https://www.acmicpc.net/problem/1475",
         "file_path": "src/implementation/boj1475/Main.java"
+    },
+    {
+        "problem_id": 2564,
+        "problem_name": "\uacbd\ube44\uc6d0",
+        "problem_level": "Silver 1",
+        "problem_tags": [
+            "case_work",
+            "implementation"
+        ],
+        "problem_link": "https://www.acmicpc.net/problem/2564",
+        "file_path": "src/implementation/boj2564/Main.java"
     }
 ]
