@@ -50,17 +50,19 @@ def generate_readme(base_dir, problems):
     readme_content = ["# Baekjoon Problem Solving\n", "## Solved Problems\n"]
     readme_content.append("| Problem ID | Title | Level | Tags | Problem Link | Code |\n")
     readme_content.append("|------------|-------|-------|------|--------------|------|\n")
+    
     for problem in problems:
         file_path = problem["file_path"]
         problem_link = problem["problem_link"]
 
-       readme_content.append(
+        readme_content.append(
             f"| {problem['problem_id']} | {problem['problem_name']} | {problem['problem_level']} | {', '.join(problem['problem_tags'])} | "
             f"[Problem Link]({problem_link}) | [Code]({file_path}) |\n"
         )
 
     with open("README.md", "w", encoding="utf-8") as f:
         f.writelines(readme_content)
+
 
 def main():
     commit_message = os.getenv("COMMIT_MESSAGE")
