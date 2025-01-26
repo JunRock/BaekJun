@@ -1,6 +1,7 @@
 import os
 import requests
 import json
+from collections import defaultdict
 
 SOLVED_AC_API_URL = "https://solved.ac/api/v3/problem/show"
 GH_API_BASED_URL = "https://api.github.com"
@@ -64,23 +65,24 @@ from collections import defaultdict
 def generate_readme(base_dir, problems):
     categorized_problems = defaultdict(list)
     for problem in problems:
-        categorized_problems[problem["problem_level"]].append(problem)
+        main_tag = problem["problem_tags"][0] if problem["problem_tags"] else "Uncategorized"
+        categorized_problems[main_tag].append(problem)
 
     readme_content = [
         '<p align="center"> <a href="https://solved.ac/wnstjr120422"> <img src="http://mazassumnida.wtf/api/generate_badge?boj=wnstjr120422" alt="Solved.ac Profile"> </a> </p>\n\n',
         "# Baekjoon Problem Solving\n"
     ]
 
-    for category, problem_list in sorted(categorized_problems.items(), key=lambda x: x[0]):
-        readme_content.append(f"<details>\n<summary><b>{category}</b></summary>\n\n")
-        readme_content.append("| Problem ID | Title | Tags | Problem Link | Code |\n")
-        readme_content.append("|------------|-------|------|--------------|------|\n")
+    for tag, problem_list in sorted(categorized_problems.items(), key=lambda x: x[0]):
+        readme_content.append(f"<details>\n<summary><b>{tag}</b></summary>\n\n")
+        readme_content.append("| Problem ID | Title | Level | Problem Link | Code |\n")
+        readme_content.append("|------------|-------|-------|--------------|------|\n")
         for problem in problem_list:
             file_path = problem.get("file_path", "N/A")
             problem_link = problem["problem_link"]
 
             readme_content.append(
-                f"| {problem['problem_id']} | {problem['problem_name']} | {', '.join(problem['problem_tags'])} | "
+                f"| {problem['problem_id']} | {problem['problem_name']} | {problem['problem_level']} | "
                 f"[Problem Link]({problem_link}) | [Code]({file_path}) |\n"
             )
         readme_content.append("\n</details>\n\n")
