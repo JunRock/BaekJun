@@ -16,19 +16,19 @@ public class Main {
         storeCount = Integer.parseInt(read());
         int result = 0;
         int[] position = new int[storeCount + 1];
-        int round = row*2+col*2;
+        int round = row * 2 + col * 2;
 
         for (int i = 0; i < storeCount + 1; i++) {
             String[] split = read().split(" ");
             int direct = Integer.parseInt(split[0]);
             position[i] = Integer.parseInt(split[1]);
 
-            switch (direct){
+            switch (direct) {
                 case 2:
-                    position[i] = row+col+(row-position[i]);
+                    position[i] = row + col + (row - position[i]);
                     break;
                 case 3:
-                    position[i] = row+row+col+(col-position[i]);
+                    position[i] = row + row + col + (col - position[i]);
                     break;
 
                 case 4:
@@ -37,12 +37,13 @@ public class Main {
             }
         }
 
-        for(int i = 0;i<storeCount;i++){
-            int div = Math.abs(position[i]-position[storeCount]);
-            result += Math.min(div,round-div);
+        for (int i = 0; i < storeCount; i++) {
+            int div = Math.abs(position[i] - position[storeCount]);
+            result += Math.min(div, round - div);
         }
         System.out.println(result);
     }
+
     private static String read() {
         try {
             return bf.readLine();
