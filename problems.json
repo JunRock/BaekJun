@@ -41,5 +41,17 @@
         ],
         "problem_link": "https://www.acmicpc.net/problem/2564",
         "file_path": "src/implementation/boj2564/Main.java"
+    },
+    {
+        "problem_id": 10828,
+        "problem_name": "\uc2a4\ud0dd",
+        "problem_level": "Silver 4",
+        "problem_tags": [
+            "data_structures",
+            "implementation",
+            "stack"
+        ],
+        "problem_link": "https://www.acmicpc.net/problem/10828",
+        "file_path": "src/implementation/boj10828/Main.java"
     }
 ]
