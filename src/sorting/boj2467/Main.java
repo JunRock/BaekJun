@@ -1,69 +1,63 @@
 package sorting.boj2467;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
+import java.io.*;
+import java.util.*;
 
 public class Main {
 
     private static final BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
     private static final BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         int solutionCount = Integer.parseInt(read());
         int[] solutionList = new int[solutionCount];
 
         String[] input = readWithSplit();
-
         for (int i = 0; i < solutionCount; i++) {
             solutionList[i] = Integer.parseInt(input[i]);
         }
 
-        Node node = binarySearch(solutionList);
-        write(node);
-        close();
+        Node result = findClosestPair(solutionList);
+        write(result);
     }
 
-    private static Node binarySearch(int[] solutionList) {
+    private static Node findClosestPair(int[] solutionList) {
         int start = 0;
         int end = solutionList.length - 1;
-        List<Node> result = new ArrayList<>();
+
+        int closestSum = Integer.MAX_VALUE;
+        int closestX = 0, closestY = 0;
+
         while (start < end) {
             int x = solutionList[start];
             int y = solutionList[end];
-            int diff = x + y;
-            result.add(new Node(x, y, diff));
-            if (Math.abs(x) > Math.abs(y)) {
-                start += 1;
+            int sum = x + y;
+
+            if (Math.abs(sum) < Math.abs(closestSum)) {
+                closestSum = sum;
+                closestX = x;
+                closestY = y;
+            }
+
+            // Move pointers based on the sum
+            if (sum > 0) {
+                end--;
             } else {
-                end -= 1;
+                start++;
             }
         }
-        return findMinimum(result);
 
-    }
-
-    private static Node findMinimum(List<Node> list) {
-        return list.stream()
-            .min(Comparator.comparingInt(node -> Math.abs(node.diff)))
-            .orElseThrow();
+        return new Node(closestX, closestY, closestSum);
     }
 
     private static class Node {
 
-        int x;
-        int y;
-        int diff;
+        int x, y, sum;
 
-        public Node(int x, int y, int diff) {
+        public Node(int x, int y, int sum) {
             this.x = x;
             this.y = y;
-            this.diff = diff;
+            this.sum = sum;
         }
     }
 
@@ -90,6 +84,7 @@ public class Main {
 
     private static void close() {
         try {
+            bf.close();
             bw.close();
         } catch (IOException e) {
             throw new RuntimeException(e);
