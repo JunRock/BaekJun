@@ -19,6 +19,7 @@ public class Main {
 
         Node result = findClosestPair(solutionList);
         write(result);
+        close();
     }
 
     private static Node findClosestPair(int[] solutionList) {
@@ -39,7 +40,6 @@ public class Main {
                 closestY = y;
             }
 
-            // Move pointers based on the sum
             if (sum > 0) {
                 end--;
             } else {
