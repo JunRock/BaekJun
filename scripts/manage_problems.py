@@ -49,10 +49,8 @@ def get_latest_commit_file_path(owner, repo, gh_token):
 def generate_readme(base_dir, problems):
     readme_content = [
         '<p align="center"> <a href="https://solved.ac/wnstjr120422"> <img src="http://mazassumnida.wtf/api/generate_badge?boj=wnstjr120422" alt="Solved.ac Profile"> </a> </p>\n\n',
-        "# Baekjoon Problem Solving\n", 
-        "## Solved Problems\n"
+        "# Baekjoon Problem Solving\n"
     ]
-    readme_content = ["# Baekjoon Problem Solving\n"]
     readme_content.append("| Problem ID | Title | Level | Tags | Problem Link | Code |\n")
     readme_content.append("|------------|-------|-------|------|--------------|------|\n")
     
