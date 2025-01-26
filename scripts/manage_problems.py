@@ -3,6 +3,10 @@ import requests
 import json
 
 SOLVED_AC_API_URL = "https://solved.ac/api/v3/problem/show"
+GH_API_BASED_URL = "https://api.github.com"
+GH_API_BASED_HEADERS = {
+    "Accept": "application/vnd.github+json"
+}
 
 def get_problem_info(problem_id):
     response = requests.get(f"{SOLVED_AC_API_URL}?problemId={problem_id}")
@@ -26,35 +30,43 @@ def get_problem_info(problem_id):
         "problem_link": f"https://www.acmicpc.net/problem/{data['problemId']}"
     }
 
+def get_latest_commit_file_path(owner, repo, gh_token):
+    headers = {
+        "Authorization": f"Bearer {gh_token}",
+        "Accept": "application/vnd.github+json"
+    }
+    commits_url = f"{GH_API_BASED_URL}/repos/{owner}/{repo}/commits"
+    response = requests.get(commits_url, headers=headers, params={"per_page": 1, "page": 1})
+    if response.status_code != 200:
+        raise Exception(f"Failed to fetch latest commit: {response.status_code}")
+
+    commit = response.json()[0]
+    if "files" not in commit or len(commit["files"]) == 0:
+        raise Exception("No files found in the latest commit.")
+
+    return commit["files"][0]["filename"]
 
 def generate_readme(base_dir, problems):
-    readme_content = ["# Baekjoon Problem Solving\n", "## Solved Problems by Category\n"]
+    readme_content = ["# Baekjoon Problem Solving\n", "## Solved Problems\n"]
 
-    categories = {}
     for problem in problems:
-        category = problem["problem_tags"][0].capitalize() if problem["problem_tags"] else "Uncategorized"
-        if category not in categories:
-            categories[category] = []
-        categories[category].append(problem)
+        file_path = problem["file_path"]
+        problem_link = problem["problem_link"]
 
-    for category, problems in categories.items():
-        readme_content.append(f"<details>\n<summary>{category}</summary>\n\n")
-        readme_content.append("| Problem ID | Title | Difficulty | Tags | Link | Code |\n")
-        readme_content.append("|------------|-------|------------|------|------|------|\n")
-        for problem in problems:
-            code_link = f"src/{category.lower()}/boj{problem['problem_id']}/Main.java"
-            readme_content.append(
-                f"| {problem['problem_id']} | {problem['problem_name']} | {problem['problem_level']} | {', '.join(problem['problem_tags'])} | "
-                f"[Problem Link]({problem['problem_link']}) | [Code]({code_link}) |\n"
-            )
-        readme_content.append("\n</details>\n")
+        readme_content.append(
+            f"| {problem['problem_id']} | {problem['problem_name']} | {problem['problem_level']} | {', '.join(problem['problem_tags'])} | "
+            f"[Problem Link]({problem_link}) | [Code]({file_path}) |\n"
+        )
 
     with open("README.md", "w", encoding="utf-8") as f:
         f.writelines(readme_content)
 
-
 def main():
     commit_message = os.getenv("COMMIT_MESSAGE")
+    gh_token = os.getenv("GH_TOKEN")
+    owner = os.getenv("OWNER")
+    repo = os.getenv("REPO")
+
     if not commit_message or not commit_message.startswith("feat : solve"):
         print("No valid commit message found.")
         return
@@ -65,6 +77,9 @@ def main():
         raise Exception("Failed to extract problem ID from commit message.")
 
     problem_info = get_problem_info(problem_id)
+
+    file_path = get_latest_commit_file_path(owner, repo, gh_token)
+    problem_info["file_path"] = file_path
 
     problems_file = "problems.json"
     if os.path.exists(problems_file):
@@ -79,7 +94,6 @@ def main():
         json.dump(problems, f, indent=4)
 
     generate_readme("src", problems)
-
 
 if __name__ == "__main__":
     main()
