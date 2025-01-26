@@ -3,6 +3,8 @@ name: Automatically Update README.md
 on:
   push:
     branches: [ "master" ]
+permissions:
+  contents: write
 
 jobs:
   create-challenge-issue:
@@ -23,6 +25,8 @@ jobs:
         run: python3 ./scripts/manage_problems.py
       - name: Commit and Push Changes
         run: |
+          git config --global user.name "JunRock"
+          git config --global user.email "wnstjr120422@naver.com"
           git add README.md problems.json
           git commit -m "Update README with problem information"
           git push
