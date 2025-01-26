@@ -11,6 +11,7 @@ public class Main {
 
     private static final BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
     private static final BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+
     public static void main(String[] args) {
         int n = Integer.parseInt(read());
         Stack<Integer> stack = new Stack<>();
