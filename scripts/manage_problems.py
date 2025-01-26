@@ -36,19 +36,18 @@ def get_latest_commit_file_path(owner, repo, gh_token):
         "Accept": "application/vnd.github+json"
     }
     commits_url = f"{GH_API_BASED_URL}/repos/{owner}/{repo}/commits"
-    response = requests.get(commits_url, headers=headers, params={"per_page": 1, "page": 1})
-    if response.status_code != 200:
-        print(f"Failed to fetch latest commit: {response.status_code}")
-        print(f"Response: {response.text}")
-        raise Exception(f"Failed to fetch latest commit: {response.status_code}")
-
-    commit = response.json()[0]
-    print(f"Commit Data: {commit}")
-    if "files" not in commit or len(commit["files"]) == 0:
-        print(f"Warning: No files found in the latest commit. Commit message: {commit['commit']['message']}")
+    try:
+        response = requests.get(commits_url, headers=headers, params={"per_page": 1, "page": 1})
+        response.raise_for_status()
+        commit = response.json()[0]
+        if "files" in commit and len(commit["files"]) > 0:
+            return commit["files"][0]["filename"]
+        else:
+            print(f"Warning: No files found in the latest commit. Commit message: {commit['commit']['message']}")
+            return None
+    except requests.exceptions.RequestException as e:
+        print(f"Failed to fetch latest commit: {e}")
         return None
-
-    return commit["files"][0]["filename"]
 
 def generate_readme(base_dir, problems):
     readme_content = [
