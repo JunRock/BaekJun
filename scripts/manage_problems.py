@@ -59,26 +59,35 @@ def get_latest_commit_file_path(owner, repo, gh_token):
         return None
 
 
+from collections import defaultdict
+
 def generate_readme(base_dir, problems):
+    categorized_problems = defaultdict(list)
+    for problem in problems:
+        categorized_problems[problem["problem_level"]].append(problem)
+
     readme_content = [
         '<p align="center"> <a href="https://solved.ac/wnstjr120422"> <img src="http://mazassumnida.wtf/api/generate_badge?boj=wnstjr120422" alt="Solved.ac Profile"> </a> </p>\n\n',
-        "# Baekjoon Problem Solving\n", 
-        "## Solved Problems\n"
+        "# Baekjoon Problem Solving\n"
     ]
-    readme_content.append("| Problem ID | Title | Level | Tags | Problem Link | Code |\n")
-    readme_content.append("|------------|-------|-------|------|--------------|------|\n")
 
-    for problem in problems:
-        file_path = problem.get("file_path", "N/A")
-        problem_link = problem["problem_link"]
+    for category, problem_list in sorted(categorized_problems.items(), key=lambda x: x[0]):
+        readme_content.append(f"<details>\n<summary><b>{category}</b></summary>\n\n")
+        readme_content.append("| Problem ID | Title | Tags | Problem Link | Code |\n")
+        readme_content.append("|------------|-------|------|--------------|------|\n")
+        for problem in problem_list:
+            file_path = problem.get("file_path", "N/A")
+            problem_link = problem["problem_link"]
 
-        readme_content.append(
-            f"| {problem['problem_id']} | {problem['problem_name']} | {problem['problem_level']} | {', '.join(problem['problem_tags'])} | "
-            f"[Problem Link]({problem_link}) | [Code]({file_path}) |\n"
-        )
+            readme_content.append(
+                f"| {problem['problem_id']} | {problem['problem_name']} | {', '.join(problem['problem_tags'])} | "
+                f"[Problem Link]({problem_link}) | [Code]({file_path}) |\n"
+            )
+        readme_content.append("\n</details>\n\n")
 
     with open("README.md", "w", encoding="utf-8") as f:
         f.writelines(readme_content)
+
 
 def main():
     commit_message = os.getenv("COMMIT_MESSAGE")
