@@ -53,5 +53,17 @@
         ],
         "problem_link": "https://www.acmicpc.net/problem/10828",
         "file_path": "src/implementation/boj10828/Main.java"
+    },
+    {
+        "problem_id": 2470,
+        "problem_name": "\ub450 \uc6a9\uc561",
+        "problem_level": "Gold 5",
+        "problem_tags": [
+            "binary_search",
+            "sorting",
+            "two_pointer"
+        ],
+        "problem_link": "https://www.acmicpc.net/problem/2470",
+        "file_path": "src/sorting/boj2470/Main.java"
     }
 ]
