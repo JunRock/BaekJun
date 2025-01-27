@@ -65,5 +65,16 @@
         ],
         "problem_link": "https://www.acmicpc.net/problem/2470",
         "file_path": "src/sorting/boj2470/Main.java"
+    },
+    {
+        "problem_id": 2170,
+        "problem_name": "\uc120 \uae0b\uae30",
+        "problem_level": "Gold 5",
+        "problem_tags": [
+            "sorting",
+            "sweeping"
+        ],
+        "problem_link": "https://www.acmicpc.net/problem/2170",
+        "file_path": "src/sorting/boj2170/Main.java"
     }
 ]

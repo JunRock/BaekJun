@@ -39,3 +39,12 @@
 
 </details>
 
+<details>
+<summary><b>sorting</b></summary>
+
+| Problem ID | Title | Level | Problem Link | Code |
+|------------|-------|-------|--------------|------|
+| 2170 | 선 긋기 | Gold 5 | [Problem Link](https://www.acmicpc.net/problem/2170) | [Code](src/sorting/boj2170/Main.java) |
+
+</details>
+
