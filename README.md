@@ -6,7 +6,7 @@
 
 | Problem ID | Title | Level | Problem Link | Code |
 |------------|-------|-------|--------------|------|
-| 2467 | 용액 | Gold 5 | [Problem Link](https://www.acmicpc.net/problem/2467) | [Code](N/A) |
+| 2467 | 용액 | Gold 5 | [Problem Link](https://www.acmicpc.net/problem/2467) | [Code](src/sorting/boj2467/Main.java) |
 | 2470 | 두 용액 | Gold 5 | [Problem Link](https://www.acmicpc.net/problem/2470) | [Code](src/sorting/boj2470/Main.java) |
 
 </details>
