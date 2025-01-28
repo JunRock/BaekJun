@@ -6,7 +6,7 @@
 
 | Problem ID | Title | Level | Problem Link | Code |
 |------------|-------|-------|--------------|------|
-| 2467 | 용액 | Gold 5 | [Problem Link](https://www.acmicpc.net/problem/2467) | [Code](src/sorting/boj2467/Main.java) |
+| 2467 | 용액 | Gold 5 | [Problem Link](https://www.acmicpc.net/problem/2467) | [Code](N/A) |
 | 2470 | 두 용액 | Gold 5 | [Problem Link](https://www.acmicpc.net/problem/2470) | [Code](src/sorting/boj2470/Main.java) |
 
 </details>
@@ -17,6 +17,7 @@
 | Problem ID | Title | Level | Problem Link | Code |
 |------------|-------|-------|--------------|------|
 | 2564 | 경비원 | Silver 1 | [Problem Link](https://www.acmicpc.net/problem/2564) | [Code](src/implementation/boj2564/Main.java) |
+| 1744 | 수 묶기 | Gold 4 | [Problem Link](https://www.acmicpc.net/problem/1744) | [Code](src/sorting/boj1744/Main.java) |
 
 </details>
 

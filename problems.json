@@ -76,5 +76,17 @@
         ],
         "problem_link": "https://www.acmicpc.net/problem/2170",
         "file_path": "src/sorting/boj2170/Main.java"
+    },
+    {
+        "problem_id": 1744,
+        "problem_name": "\uc218 \ubb36\uae30",
+        "problem_level": "Gold 4",
+        "problem_tags": [
+            "case_work",
+            "greedy",
+            "sorting"
+        ],
+        "problem_link": "https://www.acmicpc.net/problem/1744",
+        "file_path": "src/sorting/boj1744/Main.java"
     }
 ]
