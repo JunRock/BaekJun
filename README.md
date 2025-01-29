@@ -27,6 +27,7 @@
 | Problem ID | Title | Level | Problem Link | Code |
 |------------|-------|-------|--------------|------|
 | 10828 | 스택 | Silver 4 | [Problem Link](https://www.acmicpc.net/problem/10828) | [Code](src/implementation/boj10828/Main.java) |
+| 1202 | 보석 도둑 | Gold 2 | [Problem Link](https://www.acmicpc.net/problem/1202) | [Code](src/sorting/boj1202/Main.java) |
 
 </details>
 

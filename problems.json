@@ -88,5 +88,18 @@
         ],
         "problem_link": "https://www.acmicpc.net/problem/1744",
         "file_path": "src/sorting/boj1744/Main.java"
+    },
+    {
+        "problem_id": 1202,
+        "problem_name": "\ubcf4\uc11d \ub3c4\ub451",
+        "problem_level": "Gold 2",
+        "problem_tags": [
+            "data_structures",
+            "greedy",
+            "priority_queue",
+            "sorting"
+        ],
+        "problem_link": "https://www.acmicpc.net/problem/1202",
+        "file_path": "src/sorting/boj1202/Main.java"
     }
 ]
