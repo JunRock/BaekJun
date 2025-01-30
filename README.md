@@ -32,6 +32,15 @@
 </details>
 
 <details>
+<summary><b>greedy</b></summary>
+
+| Problem ID | Title | Level | Problem Link | Code |
+|------------|-------|-------|--------------|------|
+| 2437 | 저울 | Gold 2 | [Problem Link](https://www.acmicpc.net/problem/2437) | [Code](src/sorting/boj2437/Main.java) |
+
+</details>
+
+<details>
 <summary><b>implementation</b></summary>
 
 | Problem ID | Title | Level | Problem Link | Code |

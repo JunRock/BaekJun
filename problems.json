@@ -101,5 +101,16 @@
         ],
         "problem_link": "https://www.acmicpc.net/problem/1202",
         "file_path": "src/sorting/boj1202/Main.java"
+    },
+    {
+        "problem_id": 2437,
+        "problem_name": "\uc800\uc6b8",
+        "problem_level": "Gold 2",
+        "problem_tags": [
+            "greedy",
+            "sorting"
+        ],
+        "problem_link": "https://www.acmicpc.net/problem/2437",
+        "file_path": "src/sorting/boj2437/Main.java"
     }
 ]
