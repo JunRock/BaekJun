@@ -112,5 +112,19 @@
         ],
         "problem_link": "https://www.acmicpc.net/problem/2437",
         "file_path": "src/sorting/boj2437/Main.java"
+    },
+    {
+        "problem_id": 5430,
+        "problem_name": "AC",
+        "problem_level": "Gold 5",
+        "problem_tags": [
+            "deque",
+            "parsing",
+            "implementation",
+            "string",
+            "data_structures"
+        ],
+        "problem_link": "https://www.acmicpc.net/problem/5430",
+        "file_path": "src/\ubb38\uc790\uc5f4/boj5430/Main.java"
     }
 ]

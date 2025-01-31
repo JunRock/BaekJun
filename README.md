@@ -32,6 +32,15 @@
 </details>
 
 <details>
+<summary><b>deque</b></summary>
+
+| Problem ID | Title | Level | Problem Link | Code |
+|------------|-------|-------|--------------|------|
+| 5430 | AC | Gold 5 | [Problem Link](https://www.acmicpc.net/problem/5430) | [Code](src/문자열/boj5430/Main.java) |
+
+</details>
+
+<details>
 <summary><b>greedy</b></summary>
 
 | Problem ID | Title | Level | Problem Link | Code |
