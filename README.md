@@ -29,6 +29,7 @@
 | 10828 | 스택 | Silver 4 | [Problem Link](https://www.acmicpc.net/problem/10828) | [Code](src/implementation/boj10828/Main.java) |
 | 1202 | 보석 도둑 | Gold 2 | [Problem Link](https://www.acmicpc.net/problem/1202) | [Code](src/sorting/boj1202/Main.java) |
 | 11478 | 서로 다른 부분 문자열의 개수 | Silver 3 | [Problem Link](https://www.acmicpc.net/problem/11478) | [Code](src/문자열/boj11478/Main.java) |
+| 9935 | 문자열 폭발 | Gold 4 | [Problem Link](https://www.acmicpc.net/problem/9935) | [Code](src/문자열/boj9935/Main.java) |
 
 </details>
 

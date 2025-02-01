@@ -139,5 +139,17 @@
         ],
         "problem_link": "https://www.acmicpc.net/problem/11478",
         "file_path": "src/\ubb38\uc790\uc5f4/boj11478/Main.java"
+    },
+    {
+        "problem_id": 9935,
+        "problem_name": "\ubb38\uc790\uc5f4 \ud3ed\ubc1c",
+        "problem_level": "Gold 4",
+        "problem_tags": [
+            "data_structures",
+            "stack",
+            "string"
+        ],
+        "problem_link": "https://www.acmicpc.net/problem/9935",
+        "file_path": "src/\ubb38\uc790\uc5f4/boj9935/Main.java"
     }
 ]
