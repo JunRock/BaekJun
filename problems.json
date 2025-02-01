@@ -126,5 +126,18 @@
         ],
         "problem_link": "https://www.acmicpc.net/problem/5430",
         "file_path": "src/\ubb38\uc790\uc5f4/boj5430/Main.java"
+    },
+    {
+        "problem_id": 11478,
+        "problem_name": "\uc11c\ub85c \ub2e4\ub978 \ubd80\ubd84 \ubb38\uc790\uc5f4\uc758 \uac1c\uc218",
+        "problem_level": "Silver 3",
+        "problem_tags": [
+            "data_structures",
+            "hash_set",
+            "string",
+            "tree_set"
+        ],
+        "problem_link": "https://www.acmicpc.net/problem/11478",
+        "file_path": "src/\ubb38\uc790\uc5f4/boj11478/Main.java"
     }
 ]
