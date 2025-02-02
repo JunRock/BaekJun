@@ -6,7 +6,7 @@
 
 | Problem ID | Title | Level | Problem Link | Code |
 |------------|-------|-------|--------------|------|
-| 1399 | 보물의 위치 | Platinum 5 | [Problem Link](https://www.acmicpc.net/problem/1399) | [Code](src/GREEDY/boj1339/Main.java) |
+| 1399 | 보물의 위치 | Platinum 5 | [Problem Link](https://www.acmicpc.net/problem/1339) | [Code](src/GREEDY/boj1339/Main.java) |
 
 </details>
 
