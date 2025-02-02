@@ -163,5 +163,15 @@
         ],
         "problem_link": "https://www.acmicpc.net/problem/1399",
         "file_path": "src/GREEDY/boj1339/Main.java"
+    },
+    {
+        "problem_id": 1339,
+        "problem_name": "\ub2e8\uc5b4 \uc218\ud559",
+        "problem_level": "Gold 4",
+        "problem_tags": [
+            "greedy"
+        ],
+        "problem_link": "https://www.acmicpc.net/problem/1339",
+        "file_path": "src/GREEDY/boj1339/Main.java"
     }
 ]

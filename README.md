@@ -1,6 +1,14 @@
 <p align="center"> <a href="https://solved.ac/wnstjr120422"> <img src="http://mazassumnida.wtf/api/generate_badge?boj=wnstjr120422" alt="Solved.ac Profile"> </a> </p>
 
 # Baekjoon Problem Solving
+<details>
+<summary><b>ad_hoc</b></summary>
+
+| Problem ID | Title | Level | Problem Link | Code |
+|------------|-------|-------|--------------|------|
+| 1399 | 보물의 위치 | Platinum 5 | [Problem Link](https://www.acmicpc.net/problem/1399) | [Code](src/GREEDY/boj1339/Main.java) |
+
+</details>
 
 <details>
 <summary><b>binary_search</b></summary>
@@ -49,6 +57,7 @@
 | Problem ID | Title | Level | Problem Link | Code |
 |------------|-------|-------|--------------|------|
 | 2437 | 저울 | Gold 2 | [Problem Link](https://www.acmicpc.net/problem/2437) | [Code](src/sorting/boj2437/Main.java) |
+| 1339 | 단어 수학 | Gold 4 | [Problem Link](https://www.acmicpc.net/problem/1339) | [Code](src/GREEDY/boj1339/Main.java) |
 
 </details>
 
