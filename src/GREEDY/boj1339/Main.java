@@ -86,7 +86,6 @@ public class Main {
             throw new RuntimeException(e);
         }
     }
-
     private static void close() {
         try {
             bw.close();
