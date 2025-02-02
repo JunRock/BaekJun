@@ -153,18 +153,6 @@
         "file_path": "src/\ubb38\uc790\uc5f4/boj9935/Main.java"
     },
     {
-        "problem_id": 1399,
-        "problem_name": "\ubcf4\ubb3c\uc758 \uc704\uce58",
-        "problem_level": "Platinum 5",
-        "problem_tags": [
-            "ad_hoc",
-            "math",
-            "number_theory"
-        ],
-        "problem_link": "https://www.acmicpc.net/problem/1399",
-        "file_path": "src/GREEDY/boj1339/Main.java"
-    },
-    {
         "problem_id": 1339,
         "problem_name": "\ub2e8\uc5b4 \uc218\ud559",
         "problem_level": "Gold 4",
