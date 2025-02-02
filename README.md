@@ -2,15 +2,6 @@
 
 # Baekjoon Problem Solving
 <details>
-<summary><b>ad_hoc</b></summary>
-
-| Problem ID | Title | Level | Problem Link | Code |
-|------------|-------|-------|--------------|------|
-| 1399 | 보물의 위치 | Platinum 5 | [Problem Link](https://www.acmicpc.net/problem/1399) | [Code](src/GREEDY/boj1339/Main.java) |
-
-</details>
-
-<details>
 <summary><b>binary_search</b></summary>
 
 | Problem ID | Title | Level | Problem Link | Code |
