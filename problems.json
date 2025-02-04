@@ -196,5 +196,15 @@
         ],
         "problem_link": "https://www.acmicpc.net/problem/1759",
         "file_path": "src/\uc218\ud559/boj1759/Main.java"
+    },
+    {
+        "problem_id": 15649,
+        "problem_name": "N\uacfc M (1)",
+        "problem_level": "Silver 3",
+        "problem_tags": [
+            "backtracking"
+        ],
+        "problem_link": "https://www.acmicpc.net/problem/15649",
+        "file_path": "src/backtracking/boj15649/Main.java"
     }
 ]
