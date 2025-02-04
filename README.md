@@ -59,6 +59,7 @@
 |------------|-------|-------|--------------|------|
 | 2108 | 통계학 | Silver 3 | [Problem Link](https://www.acmicpc.net/problem/2108) | [Code](src/implementation/boj2108/Main.java) |
 | 1475 | 방 번호 | Silver 5 | [Problem Link](https://www.acmicpc.net/problem/1475) | [Code](src/implementation/boj1475/Main.java) |
+| 1193 | 분수찾기 | Silver 5 | [Problem Link](https://www.acmicpc.net/problem/1193) | [Code](src/수학/boj1193/Main.java) |
 
 </details>
 

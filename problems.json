@@ -161,5 +161,16 @@
         ],
         "problem_link": "https://www.acmicpc.net/problem/1339",
         "file_path": "src/GREEDY/boj1339/Main.java"
+    },
+    {
+        "problem_id": 1193,
+        "problem_name": "\ubd84\uc218\ucc3e\uae30",
+        "problem_level": "Silver 5",
+        "problem_tags": [
+            "implementation",
+            "math"
+        ],
+        "problem_link": "https://www.acmicpc.net/problem/1193",
+        "file_path": "src/\uc218\ud559/boj1193/Main.java"
     }
 ]
