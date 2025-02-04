@@ -2,6 +2,15 @@
 
 # Baekjoon Problem Solving
 <details>
+<summary><b>backtracking</b></summary>
+
+| Problem ID | Title | Level | Problem Link | Code |
+|------------|-------|-------|--------------|------|
+| 1759 | 암호 만들기 | Gold 5 | [Problem Link](https://www.acmicpc.net/problem/1759) | [Code](src/수학/boj1759/Main.java) |
+
+</details>
+
+<details>
 <summary><b>binary_search</b></summary>
 
 | Problem ID | Title | Level | Problem Link | Code |

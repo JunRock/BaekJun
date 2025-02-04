@@ -183,5 +183,18 @@
         ],
         "problem_link": "https://www.acmicpc.net/problem/1065",
         "file_path": "src/\uc218\ud559/boj1065/Main.java"
+    },
+    {
+        "problem_id": 1759,
+        "problem_name": "\uc554\ud638 \ub9cc\ub4e4\uae30",
+        "problem_level": "Gold 5",
+        "problem_tags": [
+            "backtracking",
+            "bruteforcing",
+            "combinatorics",
+            "math"
+        ],
+        "problem_link": "https://www.acmicpc.net/problem/1759",
+        "file_path": "src/\uc218\ud559/boj1759/Main.java"
     }
 ]
