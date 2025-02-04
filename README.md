@@ -12,6 +12,15 @@
 </details>
 
 <details>
+<summary><b>bruteforcing</b></summary>
+
+| Problem ID | Title | Level | Problem Link | Code |
+|------------|-------|-------|--------------|------|
+| 1065 | 한수 | Silver 4 | [Problem Link](https://www.acmicpc.net/problem/1065) | [Code](src/수학/boj1065/Main.java) |
+
+</details>
+
+<details>
 <summary><b>case_work</b></summary>
 
 | Problem ID | Title | Level | Problem Link | Code |

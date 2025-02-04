@@ -172,5 +172,16 @@
         ],
         "problem_link": "https://www.acmicpc.net/problem/1193",
         "file_path": "src/\uc218\ud559/boj1193/Main.java"
+    },
+    {
+        "problem_id": 1065,
+        "problem_name": "\ud55c\uc218",
+        "problem_level": "Silver 4",
+        "problem_tags": [
+            "bruteforcing",
+            "math"
+        ],
+        "problem_link": "https://www.acmicpc.net/problem/1065",
+        "file_path": "src/\uc218\ud559/boj1065/Main.java"
     }
 ]
