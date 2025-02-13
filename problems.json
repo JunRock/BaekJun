@@ -206,5 +206,17 @@
         ],
         "problem_link": "https://www.acmicpc.net/problem/15649",
         "file_path": "src/backtracking/boj15649/Main.java"
+    },
+    {
+        "problem_id": 12904,
+        "problem_name": "A\uc640 B",
+        "problem_level": "Gold 5",
+        "problem_tags": [
+            "greedy",
+            "implementation",
+            "string"
+        ],
+        "problem_link": "https://www.acmicpc.net/problem/12904",
+        "file_path": "src/\ubb38\uc790\uc5f4/boj12904/Main.java"
     }
 ]

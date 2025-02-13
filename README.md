@@ -68,6 +68,7 @@
 |------------|-------|-------|--------------|------|
 | 2437 | 저울 | Gold 2 | [Problem Link](https://www.acmicpc.net/problem/2437) | [Code](src/sorting/boj2437/Main.java) |
 | 1339 | 단어 수학 | Gold 4 | [Problem Link](https://www.acmicpc.net/problem/1339) | [Code](src/GREEDY/boj1339/Main.java) |
+| 12904 | A와 B | Gold 5 | [Problem Link](https://www.acmicpc.net/problem/12904) | [Code](src/문자열/boj12904/Main.java) |
 
 </details>
 
