@@ -8,6 +8,7 @@
 |------------|-------|-------|--------------|------|
 | 1759 | 암호 만들기 | Gold 5 | [Problem Link](https://www.acmicpc.net/problem/1759) | [Code](src/수학/boj1759/Main.java) |
 | 15649 | N과 M (1) | Silver 3 | [Problem Link](https://www.acmicpc.net/problem/15649) | [Code](src/backtracking/boj15649/Main.java) |
+| 9663 | N-Queen | Gold 4 | [Problem Link](https://www.acmicpc.net/problem/9663) | [Code](src/backtracking/boj9663/Main.java) |
 
 </details>
 

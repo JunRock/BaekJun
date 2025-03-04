@@ -242,5 +242,16 @@
         ],
         "problem_link": "https://www.acmicpc.net/problem/1541",
         "file_path": "src/\ubb38\uc790\uc5f4/boj1541/Main.kt"
+    },
+    {
+        "problem_id": 9663,
+        "problem_name": "N-Queen",
+        "problem_level": "Gold 4",
+        "problem_tags": [
+            "backtracking",
+            "bruteforcing"
+        ],
+        "problem_link": "https://www.acmicpc.net/problem/9663",
+        "file_path": "src/backtracking/boj9663/Main.java"
     }
 ]
