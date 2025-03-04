@@ -253,5 +253,16 @@
         ],
         "problem_link": "https://www.acmicpc.net/problem/9663",
         "file_path": "src/backtracking/boj9663/Main.java"
+    },
+    {
+        "problem_id": 14888,
+        "problem_name": "\uc5f0\uc0b0\uc790 \ub07c\uc6cc\ub123\uae30",
+        "problem_level": "Silver 1",
+        "problem_tags": [
+            "backtracking",
+            "bruteforcing"
+        ],
+        "problem_link": "https://www.acmicpc.net/problem/14888",
+        "file_path": "src/backtracking/boj14888/Main.java"
     }
 ]
