@@ -286,5 +286,16 @@
         ],
         "problem_link": "https://www.acmicpc.net/problem/10819",
         "file_path": "src/backtracking/boj10819/Main.java"
+    },
+    {
+        "problem_id": 25166,
+        "problem_name": "\ubc30\uace0\ud508 \uc544\ub9ac\uc758 \uc0cc\ub4dc\uc704\uce58 \uad6c\ub9e4\ud558\uae30",
+        "problem_level": "Bronze 1",
+        "problem_tags": [
+            "bitmask",
+            "math"
+        ],
+        "problem_link": "https://www.acmicpc.net/problem/25166",
+        "file_path": "src/\uc218\ud559/boj25166/Main.java"
     }
 ]

@@ -26,6 +26,15 @@
 </details>
 
 <details>
+<summary><b>bitmask</b></summary>
+
+| Problem ID | Title | Level | Problem Link | Code |
+|------------|-------|-------|--------------|------|
+| 25166 | 배고픈 아리의 샌드위치 구매하기 | Bronze 1 | [Problem Link](https://www.acmicpc.net/problem/25166) | [Code](src/수학/boj25166/Main.java) |
+
+</details>
+
+<details>
 <summary><b>bruteforcing</b></summary>
 
 | Problem ID | Title | Level | Problem Link | Code |
